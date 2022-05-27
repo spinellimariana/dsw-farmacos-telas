@@ -70,9 +70,93 @@ and open the template in the editor.
 
         <main>
             <div class="container">
-                <h2 class="text-decoration-none text-success">Compra concluída com sucesso!</h2>
+                <h1 class="text-decoration-none text-success">Compra concluída com sucesso!</h1>
                 <hr>
-            </div>
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-decoration-none text-primary">Pedido n.: xxxxxx</h2>
+                    </div>
+                    <div class="col">
+                        <h2 class="text-decoration-none text-primary">Valor Total: R$120,23</h2>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="text-decoration-none text-primary">Endereço de Entrega:</h4>
+                        <div class="card bg-light">
+                            <div class="mx-2 my-2">
+                                <p>Nome: João Silva</p>
+                                <p>Rua João da Silva, 345 - São Paulo/SP - CEP 11.111-11</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h4 class="text-decoration-none text-primary">Frete e pagamento:</h4>
+                        <div class="card bg-light">
+                            <div class="mx-2 my-2">
+                                <p>Forma de pagamento escolhida: Cartão de crédito final: XXXX</p>
+                                <p>Forma de entrega: Normal - Frete grátis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <h4 class="text-decoration-none text-primary">Resumo do pedido:</h4>
+                <!--tabela de produtos comprados -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Foto</th>
+                            <th>QTD</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!-- INSERIR AQUI UM FOR EACH DOS PRODUTOS DAQUELE PEDIDO NO THYMELEAF
+                        <tr th:each="produto : ${listaProdutos}">
+                            <td th:text="${produto.id}"></td>
+                            <td th:text="${produto.nome}"></td>
+                            <td><img class="imgProduto" height="50px" width="50px"  th:src="@{${produto.getFoto}}" /></td>
+                            <td th:text="${produto.qtd}"></td>
+                            <td th:text="${produto.valorVenda}"></td>  
+                        </tr>-->
+
+                        <!-- EXEMPLO ESTÁTICO DE COMO VAI FICAR EXCLUIR DEPOIS -->
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Fralda Infantil Descartável</td>
+                            <td><img class="imgProduto" height="30px" width="30px"  src="img/fralda.webp" /></td>
+                            <td>1</td>
+                            <td>R$ 64,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Advil</td>
+                            <td><img class="imgProduto" height="30px" width="30px"  src="img/advil.webp" /></td>
+                            <td>2</td>
+                            <td>R$ 5,98</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Shampoo</td>
+                            <td><img class="imgProduto" height="30px" width="30px"  src="img/shampoo.webp" /></td>
+                            <td>2</td>
+                            <td>R$ 57,80</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- fim da tabela de produtos comprados -->
+
+
+
+            </div> <!-- fim do container -->
         </main>
 
         <!-- início do rodapé -->
